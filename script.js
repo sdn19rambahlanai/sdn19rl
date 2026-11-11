@@ -24,7 +24,7 @@ const FOTO = {
   galeri: [
     { src: "images/galeri-1.jpg" },                                  // Upacara Bendera Hari Senin (kotak besar)
     { src: "images/galeri-2.jpg" },                                  // Senam Pagi Bersama
-    { src: "images/galeri-3.jpg" },                                  // Latihan Pramuka
+    { src: "images/Pramuka.jpg" },                                  // Latihan Pramuka
     { src: "images/galeri-4.jpg" },                                  // Kegiatan Kultum Ramadan
     { src: "images/galeri-5.jpg" },                                  // Penampilan Drumband
     { src: "images/galeri-6.jpg", caption: "Kegiatan Belajar" },     // tambahan
