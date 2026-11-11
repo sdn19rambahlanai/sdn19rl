@@ -530,7 +530,8 @@
     position: relative;
   }
   .galeri-item.large .galeri-frame { min-height: 320px; font-size: 100px; }
-  .galeri-item.wide { grid-column: span 2; }
+  .galeri-item.wide { grid-column: 1 / -1; }
+  .galeri-item.wide .galeri-frame { min-height: 300px; }
   .galeri-frame { min-height: 220px; }
   .galeri-frame::after {
     content: '';

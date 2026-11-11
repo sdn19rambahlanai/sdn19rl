@@ -22,16 +22,15 @@ const FOTO = {
   // Foto ke-6 dan seterusnya akan ditambahkan sebagai kotak baru.
   // "caption" boleh dihapus untuk 5 foto pertama (akan memakai tulisan yang sudah ada).
   galeri: [
-    { src: "images/galeri-sholat.jpg" },            // Sholat Berjamaah (kotak besar)
-    { src: "images/galeri-upacara-guru.jpg" },      // Dewan Guru saat Upacara Bendera
-    { src: "images/galeri-kelas.jpg" },             // Kegiatan Belajar di Kelas
-    { src: "images/galeri-halaman.jpg" },           // Kegiatan di Halaman Sekolah
-    { src: "images/galeri-membaca.jpg" },           // Kegiatan Membaca
-    { src: "images/galeri-upacara-pembina.jpg" },   // Pembina Upacara Bendera
-    { src: "images/galeri-upacara-bendera.jpg" },   // Penghormatan Bendera Merah Putih
-    { src: "images/Pramuka.jpg" }                   // Latihan Pramuka (kotak lebar)
-    // foto tambahan: tambah baris baru di sini, contoh:
-    // { src: "images/galeri-9.jpg", caption: "Perpisahan Kelas VI" },
+    { src: "images/Sholat-Dhuha-Berjamaah.jpg" },   // kotak 1 (besar)  : Sholat Dhuha Berjamaah
+    { src: "images/Tahfiz-setiap-Jum'at.jpg" },     // kotak 2          : Tahfiz Setiap Juma'at
+    { src: "images/Kegiatan-Kultum.jpg" },          // kotak 3          : Kegiatan di Halaman Sekolah
+    { src: "images/Kegiatan-Kultum 2.jpg" },        // kotak 4          : Tahfiz Setiap Juma'at
+    { src: "images/galeri-upacara-bendera.jpg" },   // kotak 5          : Upacara Bendera
+    { src: "images/Pramuka.jpg" }                   // kotak 6 (lebar)  : Latihan Pramuka
+    // Urutan di sini HARUS sama dengan urutan kotak di index.html.
+    // Foto tambahan: tambah baris baru, contoh:
+    // { src: "images/foto-baru.jpg", caption: "Perpisahan Kelas VI" },
   ],
 
   // EKSTRAKURIKULER
@@ -78,7 +77,7 @@ function cekFoto(src) {
     const img = new Image();
     img.onload = () => resolve(true);
     img.onerror = () => resolve(false);
-    img.src = src;
+    img.src = encodeURI(src);
   });
 }
 
@@ -95,7 +94,7 @@ async function pasangFoto(el, src, mode) {
   const ada = await cekFoto(src);
   if (!ada) return false; // foto belum ada -> biarkan emoji
   hapusEmoji(el);
-  el.style.backgroundImage = 'url("' + src + '")';
+  el.style.backgroundImage = 'url("' + encodeURI(src) + '")';
   el.style.backgroundSize = mode || "cover";
   el.style.backgroundPosition = "center";
   el.style.backgroundRepeat = "no-repeat";
@@ -173,7 +172,7 @@ function geser(arah) {
 }
 function tampilLightbox() {
   const f = lbList[lbIndex];
-  lbImg.src = f.src;
+  lbImg.src = encodeURI(f.src);
   lbImg.alt = f.caption;
   lbCap.textContent = f.caption + "  (" + (lbIndex + 1) + "/" + lbList.length + ")";
 }
