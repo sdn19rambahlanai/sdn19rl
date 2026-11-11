@@ -547,6 +547,43 @@
   .g5 { background: linear-gradient(135deg, #9F1239, #F43F5E); }
   .g6 { background: linear-gradient(135deg, #0C4A6E, #0EA5E9); }
 
+  /* ── TESTIMONI WALI MURID ── */
+  #testimoni { background: var(--blue-pale); }
+  .testimoni-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;
+  }
+  .testimoni-card {
+    background: var(--white); border-radius: var(--radius); padding: 32px 28px 28px;
+    box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200);
+    position: relative; display: flex; flex-direction: column;
+    transition: transform .3s, box-shadow .3s;
+  }
+  .testimoni-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .testimoni-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    background: linear-gradient(90deg, var(--blue), var(--blue-light));
+  }
+  .testimoni-quote {
+    font-family: 'Playfair Display', serif; font-size: 64px; line-height: .6;
+    color: var(--blue-pale); font-weight: 800; margin-bottom: 8px; user-select: none;
+  }
+  .testimoni-isi {
+    font-size: 14.5px; color: var(--gray-700); line-height: 1.75; font-weight: 600; flex: 1;
+  }
+  .testimoni-penulis {
+    display: flex; align-items: center; gap: 12px;
+    margin-top: 22px; padding-top: 18px; border-top: 2px dashed var(--gray-200);
+  }
+  .testimoni-avatar {
+    width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--blue), var(--blue-light));
+    color: white; font-weight: 900; font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .testimoni-nama { font-size: 14px; font-weight: 800; color: var(--gray-800); }
+  .testimoni-peran { font-size: 12px; font-weight: 700; color: var(--gray-600); margin-top: 2px; }
+
   /* ── KONTAK ── */
   #kontak { background: var(--gray-50); }
   .kontak-grid {
@@ -1502,6 +1539,22 @@
         <div class="galeri-frame g2">🚩<div class="galeri-label">Upacara Bendera</div></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONI WALI MURID ──
+     Bagian ini TERSEMBUNYI sampai ada testimoni asli.
+     Isi testimoni di script.js pada daftar TESTIMONI. -->
+<section id="testimoni" style="display:none;">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-label">💬 Kata Mereka</div>
+      <h2 class="section-title">Kata <span>Wali Murid</span></h2>
+      <p class="section-desc">
+        Pengalaman orang tua dan wali murid bersama SDN 19 Rambah Lanai.
+      </p>
+    </div>
+    <div class="testimoni-grid" id="testimoniGrid"></div>
   </div>
 </section>
 

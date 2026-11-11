@@ -68,6 +68,19 @@ const FOTO = {
 };
 
 // ---------------------------------------------------------
+// TESTIMONI WALI MURID
+// Isi HANYA dengan testimoni ASLI dari wali murid yang sudah mengizinkan
+// kalimatnya ditampilkan. Selama daftar ini kosong, bagian "Kata Wali Murid"
+// tidak muncul di website.
+// Format (hapus tanda // di depan, lalu ganti dengan data asli):
+//   { nama: "NAMA DEPAN / INISIAL", peran: "Wali Murid Kelas ...", isi: "KALIMAT ASLI WALI MURID" },
+// Saran: cukup nama depan/inisial, jangan cantumkan nama anak, alamat, atau nomor HP.
+// ---------------------------------------------------------
+const TESTIMONI = [
+  // { nama: "", peran: "Wali Murid Kelas ...", isi: "" },
+];
+
+// ---------------------------------------------------------
 // 2. FUNGSI BANTU
 // ---------------------------------------------------------
 
@@ -280,6 +293,55 @@ async function pasangGaleri() {
   });
 }
 
+// Testimoni wali murid (tampil otomatis jika daftar TESTIMONI ada isinya)
+function tampilkanTestimoni() {
+  const sec = document.getElementById("testimoni");
+  const grid = document.getElementById("testimoniGrid");
+  if (!sec || !grid) return;
+
+  const data = TESTIMONI.filter((t) => t && t.nama && t.isi && t.isi.trim() !== "");
+  if (data.length === 0) return; // belum ada data asli -> bagian tetap tersembunyi
+
+  grid.innerHTML = "";
+  data.forEach((t) => {
+    const kartu = document.createElement("div");
+    kartu.className = "testimoni-card reveal visible";
+
+    const kutip = document.createElement("div");
+    kutip.className = "testimoni-quote";
+    kutip.textContent = "\u201C";
+
+    const isi = document.createElement("p");
+    isi.className = "testimoni-isi";
+    isi.textContent = t.isi.trim();
+
+    const penulis = document.createElement("div");
+    penulis.className = "testimoni-penulis";
+
+    const avatar = document.createElement("div");
+    avatar.className = "testimoni-avatar";
+    avatar.textContent = t.nama.replace(/^(bapak|ibu|pak|bu)\s+/i, "").trim().charAt(0).toUpperCase();
+
+    const info = document.createElement("div");
+    const nama = document.createElement("div");
+    nama.className = "testimoni-nama";
+    nama.textContent = t.nama.trim();
+    const peran = document.createElement("div");
+    peran.className = "testimoni-peran";
+    peran.textContent = (t.peran || "Wali Murid").trim();
+    info.appendChild(nama);
+    info.appendChild(peran);
+
+    penulis.appendChild(avatar);
+    penulis.appendChild(info);
+    kartu.appendChild(kutip);
+    kartu.appendChild(isi);
+    kartu.appendChild(penulis);
+    grid.appendChild(kartu);
+  });
+  sec.style.display = "";
+}
+
 // ---------------------------------------------------------
 // 5. JALANKAN
 // ---------------------------------------------------------
@@ -291,4 +353,5 @@ document.addEventListener("DOMContentLoaded", () => {
   pasangEkskul();
   pasangBerita();
   pasangGaleri();
+  tampilkanTestimoni();
 });
