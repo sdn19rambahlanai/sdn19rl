@@ -530,6 +530,8 @@
     position: relative;
   }
   .galeri-item.large .galeri-frame { min-height: 320px; font-size: 100px; }
+  .galeri-item.wide { grid-column: span 2; }
+  .galeri-frame { min-height: 220px; }
   .galeri-frame::after {
     content: '';
     position: absolute; inset: 0;
@@ -967,6 +969,7 @@
   }
   @media (max-width: 480px) {
     .galeri-grid { grid-template-columns: 1fr; }
+    .galeri-item.wide { grid-column: auto; }
     .galeri-item.large { grid-row: auto; }
     .hero-stats { gap: 16px; }
   }
@@ -1486,19 +1489,28 @@
 
     <div class="galeri-grid">
       <div class="galeri-item large reveal">
-        <div class="galeri-frame g1">🏫<div class="galeri-label">Upacara Bendera Hari Senin</div></div>
+        <div class="galeri-frame g1">🕌<div class="galeri-label">Sholat Berjamaah</div></div>
       </div>
       <div class="galeri-item reveal">
-        <div class="galeri-frame g2">🌿<div class="galeri-label">Senam Pagi Bersama</div></div>
+        <div class="galeri-frame g2">🏫<div class="galeri-label">Dewan Guru saat Upacara Bendera</div></div>
       </div>
       <div class="galeri-item reveal">
+        <div class="galeri-frame g3">📚<div class="galeri-label">Kegiatan Belajar di Kelas</div></div>
+      </div>
+      <div class="galeri-item reveal">
+        <div class="galeri-frame g4">🌿<div class="galeri-label">Kegiatan di Halaman Sekolah</div></div>
+      </div>
+      <div class="galeri-item reveal">
+        <div class="galeri-frame g5">📖<div class="galeri-label">Kegiatan Membaca</div></div>
+      </div>
+      <div class="galeri-item reveal">
+        <div class="galeri-frame g6">🇮🇩<div class="galeri-label">Pembina Upacara Bendera</div></div>
+      </div>
+      <div class="galeri-item reveal">
+        <div class="galeri-frame g2">🚩<div class="galeri-label">Penghormatan Bendera Merah Putih</div></div>
+      </div>
+      <div class="galeri-item wide reveal">
         <div class="galeri-frame g3">⚜️<div class="galeri-label">Latihan Pramuka</div></div>
-      </div>
-      <div class="galeri-item reveal">
-        <div class="galeri-frame g4">📖<div class="galeri-label">Kegiatan Kultum Ramadan</div></div>
-      </div>
-      <div class="galeri-item reveal">
-        <div class="galeri-frame g5">🥁<div class="galeri-label">Penampilan Drumband</div></div>
       </div>
 
     </div>

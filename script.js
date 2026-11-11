@@ -22,20 +22,21 @@ const FOTO = {
   // Foto ke-6 dan seterusnya akan ditambahkan sebagai kotak baru.
   // "caption" boleh dihapus untuk 5 foto pertama (akan memakai tulisan yang sudah ada).
   galeri: [
-    { src: "images/galeri-1.jpg" },                                  // Upacara Bendera Hari Senin (kotak besar)
-    { src: "images/galeri-2.jpg" },                                  // Senam Pagi Bersama
-    { src: "images/Pramuka.jpg" },                                  // Latihan Pramuka
-    { src: "images/galeri-4.jpg" },                                  // Kegiatan Kultum Ramadan
-    { src: "images/galeri-5.jpg" },                                  // Penampilan Drumband
-    { src: "images/galeri-6.jpg", caption: "Kegiatan Belajar" },     // tambahan
-    { src: "images/galeri-7.jpg", caption: "Kegiatan Olahraga" }     // tambahan
-    // tambah foto lain di sini, contoh:
-    // { src: "images/galeri-8.jpg", caption: "Perpisahan Kelas VI" },
+    { src: "images/galeri-sholat.jpg" },            // Sholat Berjamaah (kotak besar)
+    { src: "images/galeri-upacara-guru.jpg" },      // Dewan Guru saat Upacara Bendera
+    { src: "images/galeri-kelas.jpg" },             // Kegiatan Belajar di Kelas
+    { src: "images/galeri-halaman.jpg" },           // Kegiatan di Halaman Sekolah
+    { src: "images/galeri-membaca.jpg" },           // Kegiatan Membaca
+    { src: "images/galeri-upacara-pembina.jpg" },   // Pembina Upacara Bendera
+    { src: "images/galeri-upacara-bendera.jpg" },   // Penghormatan Bendera Merah Putih
+    { src: "images/Pramuka.jpg" }                   // Latihan Pramuka (kotak lebar)
+    // foto tambahan: tambah baris baru di sini, contoh:
+    // { src: "images/galeri-9.jpg", caption: "Perpisahan Kelas VI" },
   ],
 
   // EKSTRAKURIKULER
   ekskul: {
-    pramuka:  "images/ekskul-pramuka.jpg",
+    pramuka:  "images/Pramuka.jpg",
     drumband: "images/ekskul-drumband.jpg",
     english:  "images/ekskul-english.jpg"
   },
