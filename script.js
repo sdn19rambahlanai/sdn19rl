@@ -22,13 +22,13 @@ const FOTO = {
   // Foto ke-6 dan seterusnya akan ditambahkan sebagai kotak baru.
   // "caption" boleh dihapus untuk 5 foto pertama (akan memakai tulisan yang sudah ada).
   galeri: [
-    { src: "images/Sholat-Dhuha-Berjamaah.jpg" },   // kotak 1 (besar)  : Sholat Dhuha Berjamaah
-    { src: "images/Tahfiz-setiap-Jum'at.jpg" },     // kotak 2          : Tahfiz Setiap Juma'at
-    { src: "images/Kegiatan-Kultum.jpg" },          // kotak 3          : Kegiatan di Halaman Sekolah
-    { src: "images/Kegiatan-Kultum 2.jpg" },        // kotak 4          : Tahfiz Setiap Juma'at
-    { src: "images/galeri-upacara-bendera.jpg" },   // kotak 5          : Upacara Bendera
-    { src: "images/Pramuka.jpg" }                   // kotak 6 (lebar)  : Latihan Pramuka
+    { src: "images/Sholat-Dhuha-Berjamaah.jpg" },                  // 1 (kotak besar) : Sholat Dhuha Berjamaah
+    { src: "images/Pramuka.jpg", pos: "35% center" },              // 2               : Latihan Pramuka
+    { src: "images/Kegiatan-Kultum.jpg" },                         // 3               : Kegiatan Kultum
+    { src: "images/Tahfiz-setiap-Jum'at.jpg" },                    // 4               : Tahfiz Setiap Juma'at
+    { src: "images/galeri-upacara-bendera.jpg", pos: "center 75%" } // 5              : Upacara Bendera
     // Urutan di sini HARUS sama dengan urutan kotak di index.html.
+    // "pos" (boleh dihapus) = bagian foto yang diutamakan saat dipotong, mis. "center top".
     // Foto tambahan: tambah baris baru, contoh:
     // { src: "images/foto-baru.jpg", caption: "Perpisahan Kelas VI" },
   ],
@@ -89,14 +89,14 @@ function hapusEmoji(el) {
 }
 
 // Pasang foto sebagai latar elemen. Return true jika berhasil.
-async function pasangFoto(el, src, mode) {
+async function pasangFoto(el, src, mode, pos) {
   if (!el || !src) return false;
   const ada = await cekFoto(src);
   if (!ada) return false; // foto belum ada -> biarkan emoji
   hapusEmoji(el);
   el.style.backgroundImage = 'url("' + encodeURI(src) + '")';
   el.style.backgroundSize = mode || "cover";
-  el.style.backgroundPosition = "center";
+  el.style.backgroundPosition = pos || "center";
   el.style.backgroundRepeat = "no-repeat";
   return true;
 }
@@ -250,7 +250,7 @@ async function pasangGaleri() {
       // kotak yang sudah ada di index.html
       const frame = item.querySelector(".galeri-frame");
       const labelEl = item.querySelector(".galeri-label");
-      const ok = await pasangFoto(frame, cfg.src);
+      const ok = await pasangFoto(frame, cfg.src, "cover", cfg.pos);
       if (ok) {
         item.dataset.foto = cfg.src;
         item.dataset.caption = cfg.caption || (labelEl ? labelEl.textContent : "Foto kegiatan");
@@ -265,7 +265,7 @@ async function pasangGaleri() {
         '<div class="galeri-frame g' + ((i % 6) + 1) + '">' +
         '<div class="galeri-label"></div></div>';
       item.querySelector(".galeri-label").textContent = cfg.caption || "Kegiatan sekolah";
-      await pasangFoto(item.querySelector(".galeri-frame"), cfg.src);
+      await pasangFoto(item.querySelector(".galeri-frame"), cfg.src, "cover", cfg.pos);
       item.dataset.foto = cfg.src;
       item.dataset.caption = cfg.caption || "Kegiatan sekolah";
       grid.appendChild(item);

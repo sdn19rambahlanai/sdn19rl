@@ -530,8 +530,6 @@
     position: relative;
   }
   .galeri-item.large .galeri-frame { min-height: 320px; font-size: 100px; }
-  .galeri-item.wide { grid-column: 1 / -1; }
-  .galeri-item.wide .galeri-frame { min-height: 300px; }
   .galeri-frame { min-height: 220px; }
   .galeri-frame::after {
     content: '';
@@ -970,7 +968,6 @@
   }
   @media (max-width: 480px) {
     .galeri-grid { grid-template-columns: 1fr; }
-    .galeri-item.wide { grid-column: auto; }
     .galeri-item.large { grid-row: auto; }
     .hero-stats { gap: 16px; }
   }
@@ -1087,7 +1084,7 @@
 </section>
 
 <!-- ── PPDB BANNER ── -->
-<div class="ppdb-banner">
+<div class="ppdb-banner" id="ppdb-form">
   <div class="ppdb-inner">
     <div class="ppdb-left">
       <div class="ppdb-icon-wrap">📋</div>
@@ -1493,10 +1490,10 @@
         <div class="galeri-frame g1">🕌<div class="galeri-label">Sholat Dhuha Berjamaah</div></div>
       </div>
       <div class="galeri-item reveal">
-        <div class="galeri-frame g3">📚<div class="galeri-label">Tahfiz Setiap Juma'at</div></div>
+        <div class="galeri-frame g3">⚜️<div class="galeri-label">Latihan Pramuka</div></div>
       </div>
       <div class="galeri-item reveal">
-        <div class="galeri-frame g4">🌿<div class="galeri-label">Kegiatan di Halaman Sekolah</div></div>
+        <div class="galeri-frame g4">🎤<div class="galeri-label">Kegiatan Kultum</div></div>
       </div>
       <div class="galeri-item reveal">
         <div class="galeri-frame g5">📖<div class="galeri-label">Tahfiz Setiap Juma'at</div></div>
@@ -1504,10 +1501,6 @@
       <div class="galeri-item reveal">
         <div class="galeri-frame g2">🚩<div class="galeri-label">Upacara Bendera</div></div>
       </div>
-      <div class="galeri-item wide reveal">
-        <div class="galeri-frame g3">⚜️<div class="galeri-label">Latihan Pramuka</div></div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1519,9 +1512,9 @@
       <div class="section-label">📅 Kalender Akademik</div>
       <h2 class="section-title">Kalender <span>Akademik</span></h2>
       <p class="section-desc">
-        Berdasarkan Keputusan Kepala Dinas Pendidikan Kabupaten Pasaman<br>
         Berdasarkan Keputusan Kepala Dinas Pendidikan Kabupaten Pasaman untuk jenjang SD.
       </p>
+    </div>
 
     <!-- Pilih Tahun Pelajaran -->
     <div style="display:flex;justify-content:center;gap:12px;margin-bottom:8px;flex-wrap:wrap;">
@@ -1534,7 +1527,6 @@
       <div style="text-align:center;font-size:12px;color:var(--gray-600);font-weight:700;margin-bottom:24px;">
         SK Disdik Pasaman No. <strong>420/13/Sekre-Disdik/2025</strong>
       </div>
-    </div>
 
     <!-- Tab Semester -->
     <div style="display:flex;justify-content:center;gap:12px;margin-bottom:40px;">
