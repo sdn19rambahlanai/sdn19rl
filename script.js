@@ -42,7 +42,7 @@ const FOTO = {
 
   // BERITA
   berita: {
-    utama:  "images/berita-1.jpg",
+    utama:  "images/Tahfiz-setiap-Jum'at.jpg",
     samping: [
       "images/berita-2.jpg",
       "images/berita-3.jpg",
