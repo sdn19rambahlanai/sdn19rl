@@ -25,7 +25,7 @@ const FOTO = {
     { src: "images/Sholat-Dhuha-Berjamaah.jpg" },                  // 1 (kotak besar) : Sholat Dhuha Berjamaah
     { src: "images/Pramuka.jpg", pos: "35% center" },              // 2               : Latihan Pramuka
     { src: "images/Kegiatan-Kultum.jpg" },                         // 3               : Kegiatan Kultum
-    { src: "images/Tahfiz-setiap-Jum'at.jpg" },                    // 4               : Tahfiz Setiap Juma'at
+    { src: "images/Tahfiz-setiap-Jumat.jpg" },                    // 4               : Tahfiz Setiap Juma'at
     { src: "images/galeri-upacara-bendera.jpg", pos: "center 75%" } // 5              : Upacara Bendera
     // Urutan di sini HARUS sama dengan urutan kotak di index.html.
     // "pos" (boleh dihapus) = bagian foto yang diutamakan saat dipotong, mis. "center top".
@@ -42,7 +42,7 @@ const FOTO = {
 
   // BERITA
   berita: {
-    utama:  "images/Tahfiz-setiap-Jum'at.jpg",
+    utama:  "images/Tahfiz-setiap-Jumat.jpg",
     samping: [
       "images/berita-2.jpg",
       "images/berita-3.jpg",
