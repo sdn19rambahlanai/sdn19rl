@@ -37,7 +37,7 @@ const FOTO = {
   ekskul: {
     pramuka:  "images/Pramuka.jpg",
     drumband: "images/ekskul-drumband.jpg",
-    english:  "images/ekskul-english.jpg"
+    english: "images/English-Club.jpg"
   },
 
   // BERITA
