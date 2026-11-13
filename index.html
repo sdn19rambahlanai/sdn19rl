@@ -891,12 +891,20 @@
   .guru-sub {
     font-size: 12px; color: var(--gray-600); font-weight: 600;
   }
+  .guru-grid.row4 { grid-template-columns: repeat(4, 1fr); }
+  .guru-card.komite-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #6D28D9, #8B5CF6);
+  }
+  .avatar-purple { background: #F5F3FF; }
+  .badge-purple { background: #EDE9FE; color: #6D28D9; }
   @media (max-width: 1024px) {
     .guru-grid { grid-template-columns: repeat(3, 1fr); }
     .guru-grid.row2 { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
+    .guru-grid.row4 { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 640px) {
-    .guru-grid, .guru-grid.row3, .guru-grid.row2 { grid-template-columns: repeat(2, 1fr); }
+    .guru-grid, .guru-grid.row3, .guru-grid.row2, .guru-grid.row4 { grid-template-columns: repeat(2, 1fr); }
   }
 
   /* ── KALENDER AKADEMIK ── */
@@ -1372,6 +1380,38 @@
         <div class="guru-role-badge badge-green">Penjaga Sekolah</div>
         <div class="guru-name">Muhammad Darwis Setiawan</div>
         <div class="guru-sub">Penjaga Sekolah</div>
+      </div>
+    </div>
+
+    <!-- Komite Sekolah -->
+    <div class="guru-group-title" style="margin-top:40px;">
+      <div class="guru-group-line" style="background:#6D28D9;"></div>
+      Komite Sekolah
+    </div>
+    <div class="guru-grid row4 reveal">
+      <div class="guru-card komite-card">
+        <div class="guru-avatar avatar-purple">👨‍💼</div>
+        <div class="guru-role-badge badge-purple">Ketua Komite</div>
+        <div class="guru-name">Abdul Rahman Siregar</div>
+        <div class="guru-sub">Periode 2026–2030</div>
+      </div>
+      <div class="guru-card komite-card">
+        <div class="guru-avatar avatar-purple">👨‍💼</div>
+        <div class="guru-role-badge badge-purple">Sekretaris</div>
+        <div class="guru-name">Hamzah</div>
+        <div class="guru-sub">Periode 2026–2030</div>
+      </div>
+      <div class="guru-card komite-card">
+        <div class="guru-avatar avatar-purple">👨‍💼</div>
+        <div class="guru-role-badge badge-purple">Bendahara</div>
+        <div class="guru-name">Togu</div>
+        <div class="guru-sub">Periode 2026–2030</div>
+      </div>
+      <div class="guru-card komite-card">
+        <div class="guru-avatar avatar-purple">👨‍💼</div>
+        <div class="guru-role-badge badge-purple">Anggota</div>
+        <div class="guru-name">Ardiwan</div>
+        <div class="guru-sub">Periode 2026–2030</div>
       </div>
     </div>
 
