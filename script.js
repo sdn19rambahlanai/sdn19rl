@@ -34,9 +34,12 @@ const FOTO = {
   ],
 
   // EKSTRAKURIKULER
+  // posisi potongan foto di kartu (opsional): "center 65%" = agak ke bawah
+  ekskulPos: { drumband: "center 68%" },
+
   ekskul: {
     pramuka:  "images/Pramuka.jpg",
-    drumband: "images/ekskul-drumband.jpg",
+    drumband: "images/Drumband.jpg",
     english: "images/English-Club.jpg"
   },
 
@@ -232,7 +235,7 @@ async function pasangGuru() {
 async function pasangEkskul() {
   for (const jenis in FOTO.ekskul) {
     const box = document.querySelector(".ekskul-img." + jenis);
-    const ok = await pasangFoto(box, FOTO.ekskul[jenis]);
+    const ok = await pasangFoto(box, FOTO.ekskul[jenis], "cover", (FOTO.ekskulPos || {})[jenis]);
     if (ok) {
       const emoji = box.querySelector(".ekskul-emoji");
       if (emoji) emoji.style.display = "none";
